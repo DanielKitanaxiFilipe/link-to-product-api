@@ -171,6 +171,7 @@ const SELECTORS = {
   etsy: { name: "h1[data-buy-box-listing-title]", price: ["[data-buy-box-region='price'] .wt-text-title-larger"] },
   ikea: { name: "h1", price: [".pip-temp-price__integer", ".pip-price__integer"] },
   nike: { name: "#pdp_product_title, h1", price: ["#price-container", "[data-testid='currentPrice-container']"] },
+  zara: { name: "h1", price: [".money-amount__main", ".price__amount-current", ".price__amount", ".price-current__amount"] },
 };
 
 function pick($, list) {

@@ -32,7 +32,7 @@ function detectStore(hostname) {
   const parts = host.split(".");
   return (
     STORES.find(
-      (s) => parts.includes(s.label) || (s.extra || []).some((e) => host.includes(e))
+      (s) => parts.includes(s.label) || (s.extra || []).some((e) => host === e || host.endsWith("." + e))
     ) || null
   );
 }
