@@ -263,6 +263,8 @@ async function getProduct(inputUrl) {
       if (!best || Object.keys(data).length > Object.keys(best).length) { best = data; finalUrl = r.finalUrl; }
       if (complete(data)) break;
     } catch (e) {
+      // Ignora erros internos do Puppeteer quando USE_BROWSER está desligado
+      if (process.env.USE_BROWSER !== "true" && /puppeteer|chrome/i.test(e.message)) continue;
       lastErr = e;
     }
   }

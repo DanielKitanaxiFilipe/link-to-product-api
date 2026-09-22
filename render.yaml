@@ -2,7 +2,7 @@ services:
   - type: web
     name: produto-backend
     env: node
-    buildCommand: npm install && npx puppeteer browsers install chrome
+    buildCommand: npm install
     startCommand: npm start
     envVars:
       - key: PORT
@@ -19,3 +19,5 @@ services:
         value: 1170
       - key: USE_BROWSER
         value: false
+      - key: SCRAPER_API_KEY
+        sync: false   # defina o valor no painel do Render → Environment
