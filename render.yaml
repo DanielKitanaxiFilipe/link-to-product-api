@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: produto-backend
+    env: node
+    buildCommand: npm install && npx puppeteer browsers install chrome
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: ALLOW_ANY_STORE
+        value: false
+      - key: DEFAULT_CURRENCY
+        value: USD
+      - key: RATE_USD_AOA
+        value: 912
+      - key: RATE_EUR_AOA
+        value: 1000
+      - key: RATE_GBP_AOA
+        value: 1170
+      - key: USE_BROWSER
+        value: false
